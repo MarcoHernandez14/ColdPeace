@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('correo', 50);
             $table->timestamps();
         });
+
     }
 
     /**
@@ -30,6 +31,9 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('usuario');
+        Schema::table('usuario', function (Blueprint $table) {
+            $table->dropTimestamps(); // Elimina las columnas si haces un rollback
+        });
         
     }
 };

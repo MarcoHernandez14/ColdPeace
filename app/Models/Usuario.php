@@ -49,4 +49,6 @@ class Usuario extends Authenticatable
     {
         return $this->contraseña;
     }
+
+    
 }
